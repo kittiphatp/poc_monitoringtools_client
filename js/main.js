@@ -52,7 +52,7 @@ selectedNode?.addEventListener('change', (e) => {
 //     }
 // })
 
-const requestOptions = {method: "POST", mode: 'no-cors'};
+const requestOptions = {method: "POST", mode: 'no-cors', redirect: "follow"};
 btnAlert.addEventListener('click', () => {
     fetch(`http://localhost:3000/api/alerts/${nodeId}`, requestOptions)
       // .then(response => response.JSON.parse())
