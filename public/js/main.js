@@ -8,6 +8,7 @@ const fetchSend = async (url, id) => {
         console.log(url)
         const response = await fetch(`${url}/${id}`, {method: 'POST', redirect: 'follow'})
         const result = await response.json()
+        console.log(result)
         return result
     } catch(err){
         return err
