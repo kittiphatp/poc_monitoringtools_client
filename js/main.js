@@ -54,15 +54,16 @@ selectedNode?.addEventListener('change', (e) => {
 
 const requestOptions = {
     method: "POST", 
-    mode: 'cors', 
-    redirect: "follow",
-    headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
-    }
+    mode: 'no-cors', 
+    redirect: "follow"
+    //,
+    // headers: {
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Credentials': 'true',
+    //     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+    // }
 };
 btnAlert.addEventListener('click', () => {
     fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
