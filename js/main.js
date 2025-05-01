@@ -27,7 +27,7 @@ const fetchSend = (url, id) => {
       mode: 'no-cors'
     };
 
-    console.log(`${url}/${id}`, ' :v1')
+    console.log(`${url}/${id}`, ' :v2')
     fetch(`${url}/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
