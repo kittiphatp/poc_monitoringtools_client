@@ -3,7 +3,7 @@ const btnAlert = document.querySelector('#btnAlert')
 const btnResolve = document.querySelector('#btnResolve')
 let textareaOutput = document.querySelector('#output')
 
-const fetchSend = async (url, id) => {
+const fetchSend = (url, id) => {
     // try{
     //     const response = await fetch(`${url}/${id}`, {
     //         method: 'POST',
