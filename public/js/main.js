@@ -9,9 +9,7 @@ const fetchSend = async (url, id) => {
         console.log(url_fetch, ':v1')
         const response = await fetch(`${url_fetch}`, {
             method: 'POST',
-            headers: {
-                credentials: "include",
-            }
+            credentials: "include"
         })
         const result = await response.json()
         console.log(result)
