@@ -3,35 +3,35 @@ const btnAlert = document.querySelector('#btnAlert')
 const btnResolve = document.querySelector('#btnResolve')
 let textareaOutput = document.querySelector('#output')
 
-const fetchSend = (url, id) => {
-    // try{
-    //     const response = await fetch(`${url}/${id}`, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Access-Control-Allow-Origin': '*',
-    //             'Access-Control-Allow-Credentials': 'true',
-    //             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    //             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
-    //         },
-    //          mode: 'no-cors'
-    //     })
-    //     const result = await response.json()
-    //     return result
-    // } catch(err){
-    //     return err
-    // }
+const fetchSend = async (url, id) => {
+    try{
+        const response = await fetch(`${url}/${id}`, {
+            method: 'POST',
+            // headers: {
+            //     'Content-Type': 'application/json',
+            //     'Access-Control-Allow-Origin': '*',
+            //     'Access-Control-Allow-Credentials': 'true',
+            //     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+            // },
+             mode: 'no-cors'
+        })
+        const result = await response.json()
+        return result
+    } catch(err){
+        return err
+    }
 
-    const requestOptions = {
-      method: "POST",
-      mode: 'no-cors'
-    };
+    // const requestOptions = {
+    //   method: "POST",
+    //   mode: 'no-cors'
+    // };
 
-    console.log(`${url}/${id}`, ' :v4')
-    fetch(`${url}/${id}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+    // console.log(`${url}/${id}`, ' :v4')
+    // fetch(`${url}/${id}`, requestOptions)
+    //   .then((response) => response.json())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.error(error));
 }
 
 let nodeId = 0
