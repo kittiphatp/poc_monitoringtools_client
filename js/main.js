@@ -58,7 +58,7 @@ btnAlert.addEventListener('click', () => {
     fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-            let resultTxt = await JSON.stringify(result, null, 2)
+            let resultTxt = JSON.stringify(result, null, 2)
             if (textareaOutput) {
                 textareaOutput.innerHTML = `${resultTxt}`
                 textareaOutput.classList.remove('textareaResolve')
