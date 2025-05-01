@@ -10,9 +10,7 @@ const fetchSend = async (url, id) => {
         const response = await fetch(`${url_fetch}`, {
             method: 'POST',
             headers: {
-                'Access-Control-Allow-Origin': 'https://poc-monitoringtools-client.vercel.app/',
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE',
-                'Access-Control-Allow-Headers': 'X-Requested-With'
+                credentials: "include",
             }
         })
         const result = await response.json()
