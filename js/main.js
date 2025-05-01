@@ -13,7 +13,8 @@ const fetchSend = async (url, id) => {
                 'Access-Control-Allow-Credentials': 'true',
                 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
-            }
+            },
+             mode: 'no-cors'
         })
         const result = await response.json()
         return result
