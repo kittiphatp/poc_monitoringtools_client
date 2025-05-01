@@ -30,7 +30,7 @@ const fetchSend = (url, id) => {
     console.log(`${url}/${id}`, ' :v3')
     fetch(`${url}/${id}`, requestOptions)
       .then((response) => response.json())
-      .then((result) => console.log(JSON.stringify(result, null, 2)))
+      .then((result) => console.log(JSON.stringify(result)))
       .catch((error) => console.error(error));
 }
 
