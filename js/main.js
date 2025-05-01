@@ -55,15 +55,16 @@ selectedNode?.addEventListener('change', (e) => {
 const requestOptions = {method: "POST", mode: 'no-cors'};
 btnAlert.addEventListener('click', () => {
     fetch(`http://localhost:3000/api/alerts/${nodeId}`, requestOptions)
-      .then(response => response.JSON.parse())
-      .then(result => JSON.stringify(result, null, 2))
-      .then(txt => {
-        if (textareaOutput) {
-            textareaOutput.innerHTML = `${txt}`;
-            textareaOutput.classList.remove('textareaResolve')
-            textareaOutput.classList.add('textareaAlert')
-        }
-      })           
+      // .then(response => response.JSON.parse())
+      .then(response => console.log(response))
+      // .then(result => JSON.stringify(result, null, 2))
+      // .then(txt => {
+      //   if (textareaOutput) {
+      //       textareaOutput.innerHTML = `${txt}`;
+      //       textareaOutput.classList.remove('textareaResolve')
+      //       textareaOutput.classList.add('textareaAlert')
+      //   }
+      // })           
       .catch((error) => console.error('There is some error: ', error));  
 })
 
