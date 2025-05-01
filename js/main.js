@@ -27,7 +27,7 @@ const fetchSend = async (url, id) => {
       redirect: "follow"
     };
     
-    fetch("poc-monitoringtools-fs-server.vercel.app/api/resolves/0", requestOptions)
+    fetch(`${url}/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
