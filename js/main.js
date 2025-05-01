@@ -17,6 +17,7 @@ const fetchSend = async (url, id) => {
              mode: 'no-cors'
         })
         const result = await response.json()
+        console.log(result, ' :v5')
         return result
     } catch(err){
         return err
