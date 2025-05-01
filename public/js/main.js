@@ -23,7 +23,7 @@ selectedNode?.addEventListener('change', (e) => {
 })
 
 btnAlert?.addEventListener('click', async () => {
-    const result = await fetchSend("poc-monitoringtools-fs-server.vercel.app/api/alerts", nodeId)
+    const result = await fetchSend("https://poc-monitoringtools-fs-server.vercel.app/api/alerts", nodeId)
     let resultTxt = JSON.stringify(result, null, 2)
 
     if (textareaOutput) {
@@ -34,7 +34,7 @@ btnAlert?.addEventListener('click', async () => {
 })
 
 btnResolve?.addEventListener('click', async () => {
-    const result = await fetchSend("poc-monitoringtools-fs-server.vercel.app/api/resolves", nodeId)
+    const result = await fetchSend("https://poc-monitoringtools-fs-server.vercel.app/api/resolves", nodeId)
     let resultTxt = JSON.stringify(result, null, 2)
     
     if (textareaOutput) {
