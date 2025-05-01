@@ -7,13 +7,6 @@ const fetchSend = async (url, id) => {
     try{
         const response = await fetch(`${url}/${id}`, {
             method: 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            //     'Access-Control-Allow-Origin': '*',
-            //     'Access-Control-Allow-Credentials': 'true',
-            //     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
-            // },
              mode: 'no-cors'
         })
         const result = await response.json()
@@ -22,17 +15,6 @@ const fetchSend = async (url, id) => {
     } catch(err){
         return err
     }
-
-    // const requestOptions = {
-    //   method: "POST",
-    //   mode: 'no-cors'
-    // };
-
-    // console.log(`${url}/${id}`, ' :v4')
-    // fetch(`${url}/${id}`, requestOptions)
-    //   .then((response) => response.json())
-    //   .then((result) => console.log(result))
-    //   .catch((error) => console.error(error));
 }
 
 let nodeId = 0
@@ -54,16 +36,7 @@ selectedNode?.addEventListener('change', (e) => {
 
 const requestOptions = {
     method: "POST", 
-    mode: 'no-cors', 
-    redirect: "follow"
-    //,
-    // headers: {
-    //     'Content-Type': 'application/json',
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Access-Control-Allow-Credentials': 'true',
-    //     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
-    // }
+    mode: 'no-cors'
 };
 btnAlert.addEventListener('click', () => {
     fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
@@ -72,7 +45,11 @@ btnAlert.addEventListener('click', () => {
               return response.json()
           }
       })
-      .then(result => JSON.stringify(result, null, 2))
+      // .then(result => JSON.stringify(result, null, 2))
+      .then(result => {
+          console.log(result)
+          return JSON.stringify(result)
+      })
       .then(txt => {
         if (textareaOutput) {
             textareaOutput.innerHTML = `${txt}`;
