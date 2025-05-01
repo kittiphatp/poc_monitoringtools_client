@@ -27,10 +27,10 @@ const fetchSend = (url, id) => {
       mode: 'no-cors'
     };
 
-    console.log(`${url}/${id}`, ' :v2')
+    console.log(`${url}/${id}`, ' :v3')
     fetch(`${url}/${id}`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((response) => response.json())
+      .then((result) => console.log(JSON.stringify(result, null, 2)))
       .catch((error) => console.error(error));
 }
 
