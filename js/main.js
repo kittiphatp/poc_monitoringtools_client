@@ -55,7 +55,7 @@ selectedNode?.addEventListener('change', (e) => {
 const requestOptions = {method: "POST", mode: 'no-cors'};
 btnAlert.addEventListener('click', () => {
     fetch(`http://localhost:3000/api/alerts/${nodeId}`, requestOptions)
-      .then(response => response.json())
+      .then(response => response.JSON.parse())
       .then(result => JSON.stringify(result, null, 2))
       .then(txt => {
         if (textareaOutput) {
