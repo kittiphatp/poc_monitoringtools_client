@@ -52,6 +52,8 @@ selectedNode?.addEventListener('change', (e) => {
 //     }
 // })
 
+const requestOptions = {method: "POST", mode: 'no-cors'};
+
 btnAlert.addEventListener('click', () => {
     fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
       .then((response) => response.json())
