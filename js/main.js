@@ -41,20 +41,32 @@ selectedNode?.addEventListener('change', (e) => {
     nodeId = Number(e.target.value)
 })
 
-btnAlert?.addEventListener('click', async () => {
-    // const result = await fetchSend('http://localhost:3000/api/alerts', nodeId)
-    const result = await fetchSend('https://poc-monitoringtools-fs-server.vercel.app/api/alerts', nodeId)
-    let resultTxt = await JSON.stringify(result, null, 2)
+// btnAlert?.addEventListener('click', async () => {
+//     const result = await fetchSend('https://poc-monitoringtools-fs-server.vercel.app/api/alerts', nodeId)
+//     let resultTxt = await JSON.stringify(result, null, 2)
 
-    if (textareaOutput) {
-        textareaOutput.innerHTML = `${resultTxt}`;
-        textareaOutput.classList.remove('textareaResolve')
-        textareaOutput.classList.add('textareaAlert')
-    }
+//     if (textareaOutput) {
+//         textareaOutput.innerHTML = `${resultTxt}`;
+//         textareaOutput.classList.remove('textareaResolve')
+//         textareaOutput.classList.add('textareaAlert')
+//     }
+// })
+
+btnAlert.addEventListener('click', () => {
+    fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+            let resultTxt = await JSON.stringify(result, null, 2)
+            if (textareaOutput) {
+                textareaOutput.innerHTML = `${resultTxt}`
+                textareaOutput.classList.remove('textareaResolve')
+                textareaOutput.classList.add('textareaAlert')
+            }
+      })
+      .catch((error) => console.error(error));  
 })
 
-btnResolve?.addEventListener('click', async () => {
-    // const result = await fetchSend('http://localhost:3000/api/resolves', nodeId)
+btnResolve.addEventListener('click', async () => {
     const result = await fetchSend('https://poc-monitoringtools-fs-server.vercel.app/api/resolves', nodeId)
     let resultTxt = JSON.stringify(result, null, 2)
     
