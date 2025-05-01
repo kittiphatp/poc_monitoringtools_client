@@ -68,7 +68,8 @@ btnAlert.addEventListener('click', () => {
     fetch(`http://localhost:3000/api/alerts/${nodeId}`, requestOptions)
       .then(response => {
           if(response.ok){
-              response.JSON.parse()
+              // response.JSON.parse()
+              console.log(response.json())
           }
       })
       .then(result => JSON.stringify(result, null, 2))
