@@ -7,7 +7,12 @@ const fetchSend = async (url, id) => {
     try{
         const url_fetch = url + '/' + id
         console.log(url_fetch)
-        const response = await fetch(`${url_fetch}`, {method: 'POST'})
+        const response = await fetch(`${url_fetch}`, {
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
         const result = await response.json()
         console.log(result)
         return result
