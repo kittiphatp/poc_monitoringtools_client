@@ -65,7 +65,7 @@ const requestOptions = {
     }
 };
 btnAlert.addEventListener('click', () => {
-    fetch(`http://localhost:3000/api/alerts/${nodeId}`, requestOptions)
+    fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
       .then(response => {
           if(response.ok){
               response.JSON.json()
