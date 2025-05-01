@@ -59,13 +59,14 @@ btnAlert.addEventListener('click', () => {
       .then((response) => response.json())
       .then((result) => {
             let resultTxt = JSON.stringify(result, null, 2)
+            console.log(resultTxt)
             if (textareaOutput) {
                 textareaOutput.innerHTML = `${resultTxt}`
                 textareaOutput.classList.remove('textareaResolve')
                 textareaOutput.classList.add('textareaAlert')
             }
       })
-      .catch((error) => console.error(error));  
+      .catch((error) => console.error('There is some error: ', error));  
 })
 
 btnResolve.addEventListener('click', async () => {
