@@ -53,14 +53,12 @@ selectedNode?.addEventListener('change', (e) => {
 // })
 
 const requestOptions = {method: "POST", mode: 'no-cors'};
-
 btnAlert.addEventListener('click', () => {
     fetch(`https://poc-monitoringtools-fs-server.vercel.app/api/alerts/${nodeId}`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-            console.log(result)
-            let resultTxt = JSON.stringify(result, null, 2)
-            if (textareaOutput) {
+      .then(response => response.json())
+      .then(result => JSON.stringify(result, null, 2))
+      .then(txt => {
+          if (textareaOutput) {
                 textareaOutput.innerHTML = `${resultTxt}`
                 textareaOutput.classList.remove('textareaResolve')
                 textareaOutput.classList.add('textareaAlert')
