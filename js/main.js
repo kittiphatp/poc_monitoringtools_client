@@ -14,7 +14,12 @@ const fetchSend = async (url, id) => {
 }
 
 let nodeId = 0
-selectedNode.addEventListener('change', (e) => nodeId = Number(e.target.value))
+selectedNode.addEventListener('change', (e) => {
+    nodeId = Number(e.target.value)
+    textareaOutput.innerHTML = ''
+    textareaOutput.classList.remove('textareaAlert')
+    textareaOutput.classList.remove('textareaResolve')
+})
 
 const requestOptions = {method: "POST", mode: 'no-cors'};
 
