@@ -1,0 +1,40 @@
+#node {
+  margin: 4px 5px;
+  padding: 8px 15px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+#btnAlert {
+    background-color: #fc2f2f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+#btnResolve {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.textareaAlert {
+    border: #fc2f2f solid 1px;
+    color: #fc2f2f;
+}
+.textareaResolve {
+    border: #4CAF50 solid 1px;
+    color: #4CAF50
+}
