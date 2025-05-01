@@ -5,7 +5,7 @@ let textareaOutput = document.querySelector('#output')
 
 const fetchSend = async (url, id) => {
     try{
-        const response = await fetch(`${url}/${id}`, {method: 'POST'})
+        const response = await fetch(`${url}/${id}`, {method: 'POST', redirect: 'follow'})
         const result = await response.json()
         return result
     } catch(err){
