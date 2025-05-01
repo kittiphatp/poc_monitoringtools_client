@@ -24,7 +24,7 @@ const fetchSend = (url, id) => {
 
     const requestOptions = {
       method: "POST",
-      redirect: "follow"
+      mode: 'no-cors'
     };
 
     console.log(`${url}/${id}`, ' :v1')
