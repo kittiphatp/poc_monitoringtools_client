@@ -26,7 +26,8 @@ const fetchSend = (url, id) => {
       method: "POST",
       redirect: "follow"
     };
-    
+
+    console.log(`${url}/${id}`, ' :v1')
     fetch(`${url}/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
